@@ -1,0 +1,33 @@
+We need to build an api endpoint which can accept the following in the request body:
+{
+    data: "name,email,mobile"
+}
+
+e.g.:
+{
+    data: "name-goes-here, email-goes-here, number-goes-here"
+}
+
+It should then return if the provided values are valid or not.
+
+API Response:
+{
+    name: {
+        valueProvided: "name",
+        isValid: true
+    },
+    email: {
+        valueProvided: "",
+        isValid: false
+    },
+    mobile: {
+        valueProvided: "9873648213",
+        isValid: true
+    }
+}
+
+Validation rules:
+
+1. All three are required values
+2. Email should be a valid one
+3. Mobile should be a valid Indian mobile number. The request will be always be sent without the country code
